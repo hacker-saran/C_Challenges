@@ -9,29 +9,24 @@ Output:
 -1 4 -1 -1
 */
 
-#include<stdio.h>
-#include<stdlib.h>
-
 int main()
 {
     int n;
     scanf("%d",&n);
-    int a[n];
-    for(int i=0;i<n;i++) scanf("%d ",&a[i]);
-    
+    int a[n],oddCount[n],tcount=0;
     for(int i=0;i<n;i++)
     {
-        int left=0,right=0;
-        for(int j=0;j<n;j++)
+        scanf("%d ",&a[i]);
+        oddCount[i]=tcount;
+        if(a[i]%2)tcount++;
+    }
+    int left,right;
+    for(int i=0;i<n;i++){
+        left = oddCount[i];
+        right = tcount-oddCount[i];
+        if(a[i]%2)
         {
-            if(j<i && a[j]%2)
-            {
-                left++;
-            }
-            else if(j>i && a[j]%2)
-            {
-                right++;
-            }
+            right-=1;
         }
         if(left==right)
         {
