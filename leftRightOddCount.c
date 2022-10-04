@@ -1,4 +1,7 @@
 /*
+
+Left Right Odd Count
+
 An array of N integers is given as a input to the program. For each integer the program must count the odd integers 
 on the left side is equal to the count of the odd integers on the right side. Else the program must print -1.
 
